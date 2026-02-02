@@ -460,6 +460,9 @@ async fn run_subcommand(
     DenoSubcommand::Publish(publish_flags) => spawn_subcommand(async {
       tools::publish::publish(flags, publish_flags).await
     }),
+    DenoSubcommand::Pack(pack_flags) => spawn_subcommand(async {
+      tools::pack::pack(flags, pack_flags).await
+    }),
     DenoSubcommand::Help(help_flags) => spawn_subcommand(async move {
       use std::io::Write;
 
